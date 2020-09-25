@@ -1,12 +1,76 @@
 import React, { Component } from "react";
 
 class AddGoods extends Component {
-    render() {
-      return (
-        <div className="addGoods">
-        </div>
-      );
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: null,
+            price: null,
+            unit: null,
+            img: null
+        }
     }
-  }
-  
-  export default AddGoods;
+
+    handleSaveData = (item) => {
+        item.pritemDefault();
+        let goods = {
+            name: this.state.name,
+            price: this.state.price,
+            unit: this.state.unit,
+            img: this.state.img
+        }
+    }
+
+
+    render() {
+        return (
+            <div className="addGoods">
+                <form>
+                    <h4>添加商品</h4>
+
+                    <div>
+                        <label htmlFor='name'>*名称</label>
+                        <input name='name'
+                            placeholder='名称'
+                            onChange={(item) => this.setState({ name: item.target.value })}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor='name'>*价格</label>
+                        <input name='price'
+
+                            placeholder='价格'
+                            onChange={(item) => this.setState({ price: item.target.value })}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor='name'>*单位</label>
+                        <input name='unit'
+                            placeholder='单位'
+                            onChange={(item) => this.setState({ unit: item.target.value })}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor='name'>*图片</label>
+                        <input name='url'
+                            placeholder='URL'
+                            onChange={(item) => this.setState({ img: item.target.value })}
+                        /></div>
+
+
+                    <div>
+                        <input className='submitButton' type='submit' name='Submit'
+                            disabled={!(this.state.name&&this.state.price&&this.state.unit&&this.state.img)}
+                            onClick={this.handleSaveData}
+                        />
+                    </div>
+                </form>
+            </div>
+        )
+    };
+}
+
+export default AddGoods;
