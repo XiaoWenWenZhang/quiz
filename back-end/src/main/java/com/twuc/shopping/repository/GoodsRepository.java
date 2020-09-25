@@ -1,7 +1,7 @@
 package com.twuc.shopping.repository;
 
-import com.twuc.shopping.domain.User;
+import com.twuc.shopping.dto.GoodsDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, String> {
+public interface GoodsRepository extends JpaRepository<GoodsDto, String> {
 }
