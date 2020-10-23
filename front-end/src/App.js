@@ -1,18 +1,16 @@
-
 import React, { Component } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
-import Home from "./Home";
-import Header from "./Header"
-import Order from "./Order"
-import './App.css';
-import AddGoods from "./AddGoods";
-import Footer from "./Footer";
+import Home from "./container/Home";
+import Header from "./component/Header";
+import Order from "./container/Order";
+import "./styles/App.css";
+import AddGoods from "./container/AddGoods";
+import Footer from "./component/Footer";
 
 class App extends Component {
   render() {
     return (
       <div>
-
         <div className="app">
           <BrowserRouter>
             <Header />
@@ -22,12 +20,9 @@ class App extends Component {
             <Footer />
           </BrowserRouter>
         </div>
-
-
       </div>
     );
   }
 }
 
 export default App;
-
