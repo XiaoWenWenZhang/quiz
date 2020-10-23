@@ -1,12 +1,34 @@
 import React, { Component } from "react";
+import Goods from "./Goods";
 
 class GoodsList extends Component {
-    render() {
-      return (
-        <div className="goodsList">
-        </div>
-      );
-    }
+  state = {
+    goodsList: [],
+  };
+  componentDidMount = async () => {
+    fetch("http://localhost:8080/goodsList", { method: "GET" })
+      .then((Response) => {
+        if (Response.status === 200) {
+          return Response.json();
+        } else {
+          Promise.reject();
+        }
+      })
+      .then((jsonData) => {
+        this.setState({
+          goodsList: jsonData,
+        });
+      });
+  };
+  render() {
+    return (
+      <div className="goods-list">
+        {this.state.goodsList.map((goods, index) => (
+          <Goods key={index} {...goods} />
+        ))}
+      </div>
+    );
   }
-  
-  export default GoodsList;
+}
+
+export default GoodsList;

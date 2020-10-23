@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Route, BrowserRouter } from "react-router-dom";
-import Home from "./container/Home";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
+import GoodsList from "./container/GoodsList";
 import Header from "./component/Header";
 import Order from "./container/Order";
 import "./styles/App.css";
@@ -14,9 +14,10 @@ class App extends Component {
         <div className="app">
           <BrowserRouter>
             <Header />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={GoodsList} />
             <Route path="/order" component={Order} />
             <Route path="/addGoods" component={AddGoods} />
+            <Redirect to="/" />
             <Footer />
           </BrowserRouter>
         </div>
