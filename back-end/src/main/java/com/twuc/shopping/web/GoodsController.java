@@ -14,13 +14,13 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @PostMapping("/addgoods")
+    @PostMapping("/add")
     public ResponseEntity addGoods(@RequestBody Goods goods){
         goodsService.addGoods(goods);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/")
+    @GetMapping("/goodsList")
     public ResponseEntity getGoodsList(){
         return goodsService.getGoodsList();
     }

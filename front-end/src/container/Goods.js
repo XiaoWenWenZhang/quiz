@@ -1,16 +1,13 @@
 import React from "react";
 
-const Goods = ({ name, price, unit, image, onAddToCart }) => (
-  <div className="product">
-    <img src={image} alt={name} />
-    <p>{name}</p>
-    <p className="desc">
-      单价：{price}元/{unit}
+const Goods = ({ goods, AddToCart }) => (
+  <div className="goods">
+    <img src={goods.img} alt={goods.name} />
+    <p>{goods.name}</p>
+    <p>
+      单价：{goods.price}元/{goods.unit}
     </p>
-    <button
-      className="button-add"
-      onClick={() => onAddToCart({ name, price, unit, image })}
-    >
+    <button className="add-to-cart" onClick={() => AddToCart(goods)}>
       +
     </button>
   </div>

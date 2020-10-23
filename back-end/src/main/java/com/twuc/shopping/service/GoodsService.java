@@ -12,7 +12,7 @@ public class GoodsService {
     GoodsRepository goodsRepository;
 
     public void addGoods(@RequestBody Goods goods){
-        GoodsBO goodsBO = GoodsBO.builder().price(goods.getPrice()).unit(goods.getUnit()).url(goods.getUrl()).build();
+        GoodsBO goodsBO = GoodsBO.builder().price(goods.getPrice()).unit(goods.getUnit()).imgUrl(goods.getImgUrl()).build();
         goodsRepository.save(goodsBO);
     }
 

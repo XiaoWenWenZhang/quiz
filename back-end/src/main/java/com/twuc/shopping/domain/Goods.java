@@ -13,8 +13,9 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Goods {
+    private String name;
     private String price;
     private String unit;
-    private String url;
+    private String imgUrl;
 
 }

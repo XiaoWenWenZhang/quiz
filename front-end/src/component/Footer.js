@@ -6,7 +6,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <span>TW Mall 2020 Created By HJR</span>
+        <span>TW Mall 2020 Created By XW</span>
       </div>
     );
   }

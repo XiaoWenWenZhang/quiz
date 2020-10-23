@@ -5,7 +5,7 @@ class GoodsList extends Component {
   state = {
     goodsList: [],
   };
-  componentDidMount = async () => {
+  componentDidMount = () => {
     fetch("http://localhost:8080/goodsList", { method: "GET" })
       .then((Response) => {
         if (Response.status === 200) {
@@ -20,11 +20,12 @@ class GoodsList extends Component {
         });
       });
   };
+
   render() {
     return (
       <div className="goods-list">
         {this.state.goodsList.map((goods, index) => (
-          <Goods key={index} {...goods} />
+          <Goods key={index} AddToCart={this.props.AddToCart} goods={goods} />
         ))}
       </div>
     );

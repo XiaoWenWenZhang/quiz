@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 
@@ -17,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "goods")
 public class GoodsBO {
     @Id
     @GeneratedValue(generator = "user_id")
@@ -30,5 +28,5 @@ public class GoodsBO {
     private String unit;
 
     @NotNull
-    private String url;
+    private String imgUrl;
 }
