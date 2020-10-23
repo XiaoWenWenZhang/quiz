@@ -1,7 +1,7 @@
 package com.twuc.shopping.service;
 
 import com.twuc.shopping.domain.Goods;
-import com.twuc.shopping.dto.GoodsDto;
+import com.twuc.shopping.bo.GoodsBO;
 import com.twuc.shopping.repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +12,8 @@ public class GoodsService {
     GoodsRepository goodsRepository;
 
     public void addGoods(@RequestBody Goods goods){
-        GoodsDto goodsDto = GoodsDto.builder().price(goods.getPrice()).unit(goods.getUnit()).url(goods.getUrl()).build();
-        goodsRepository.save(goodsDto);
+        GoodsBO goodsBO = GoodsBO.builder().price(goods.getPrice()).unit(goods.getUnit()).url(goods.getUrl()).build();
+        goodsRepository.save(goodsBO);
     }
 
     public ResponseEntity getGoodsList(){

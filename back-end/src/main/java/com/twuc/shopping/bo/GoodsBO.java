@@ -1,4 +1,4 @@
-package com.twuc.shopping.dto;
+package com.twuc.shopping.bo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GoodsDto {
+public class GoodsBO {
     @Id
     @GeneratedValue(generator = "user_id")
     @Column(columnDefinition = "VARCHAR(36)")
